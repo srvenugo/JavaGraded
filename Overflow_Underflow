@@ -9,6 +9,7 @@ System.out.println(a);
 System.out.println(b);  
 }}  
 
+// Adding lower type
 class Simple{  
 public static void main(String[] args){  
 byte a=10;  
