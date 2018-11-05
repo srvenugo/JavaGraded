@@ -1,0 +1,36 @@
+//https://dzone.com/articles/overflow-and-underflow-data
+//https://www.javatpoint.com/java-variables
+class Simple{  
+public static void main(String[] args){  
+//Overflow  
+int a=130;  
+byte b=(byte)a;  
+System.out.println(a);  
+System.out.println(b);  
+}}  
+
+class Simple{  
+public static void main(String[] args){  
+byte a=10;  
+byte b=10;  
+//byte c=a+b;//Compile Time Error: because a+b=20 will be int  
+byte c=(byte)(a+b);  
+System.out.println(c);  
+}}  
+
+
+/*
+Overflow and underflow of values of various data types is a very common occurence in Java programs. 
+This is usually because the beginners dont' pay proper attention to the default values of various data types. 
+If we are creating a byte type variable and assigning it a value, we should be aware that the value will be treated as an int 
+and hence a potential overflow condition.
+In Java the overflow and underflow are more serious because there is no warning or exception raised by the JVM when such a condition occurs. 
+Some developers argue that program should either crash or raise exception in such case but decision for adding such behavior
+is in the hands of creators of programming language. 
+By looking at a problem in your program, you can't straightway tell that an overflow or underflow condition has occured. 
+It is only after debugging that we come to know of the real cause.
+
+Overflow in int: As int data type is 32 bit in Java, any value that surpasses 32 bits gets rolled over. In numerical terms, it means that after incrementing 1 on Integer.MAX_VALUE (2147483647), the returned value will be -2147483648. In fact you don't need to remember these values and the constants Integer.MIN_VALUE and Integer.MAX_VALUE can be used.
+Underflow of int: Underflow is the opposite of overflow. While we reach the upper limit in case of overflow, we reach the lower limit in case of underflow. Thus after decrementing 1 from Integer.MIN_VALUE, we reach Integer.MAX_VALUE. Here we have rolled over from the lowest value of int to the maximum value.
+
+*/
