@@ -1,0 +1,30 @@
+//Method overloading can be used for different arguments /datatypes 
+//https://www.geeksforgeeks.org/overloading-in-java/
+public class methodOL 
+{
+//overloaded sum(). This sum takes 2 int parameters
+	public int sum(int x, int y)
+	{
+		return (x+y);
+	}
+	
+//overloaded sum(). This sum takes 3 int parameters
+	public int sum(int x, int y, int z)
+	{
+		return (x+y+z);		
+	}
+	
+//overloaded sum(). This sum takes two double parameters 
+	public double sum(double x, double y)
+	{
+		return(x+y);		
+	}
+// Driver code
+	public static void main(String args[])
+	{
+		methodOL s = new methodOL();
+		System.out.println(s.sum(10,20));
+		System.out.println(s.sum(10, 20,30));
+		System.out.println(s.sum(10.5,  20.5));
+	}
+}
