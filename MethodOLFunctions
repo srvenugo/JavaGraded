@@ -1,0 +1,48 @@
+//Method overloading can be used for different arguments /datatypes 
+public class methodOL 
+{
+//overloaded sum(). This sum takes 2 int parameters
+	public int sum(int x, int y)
+	{
+		return (x+y);
+	}
+	
+//overloaded sum(). This sum takes 3 int parameters
+	public int sum(int x, int y, int z)
+	{
+		return (x+y+z);		
+	}
+	
+//overloaded sum(). This sum takes two double parameters 
+	public double sum(double x, double y)
+	{
+		return(x+y);		
+	}
+// overload substraction(). This sub takes an int and a double parameter
+	public double subt(int x, double y)
+	{
+		return(x-y);
+	}
+// overload multiplication(). This sub takes an int and a double parameter
+		public double multiply(int x, double y)
+		{
+			return(x*y);
+		}
+		
+// overload divide(). This sub takes an int and a double parameter
+				public double divide(int x, double y)
+				{
+					return(x/y);
+				}
+// Driver code
+	public static void main(String args[])
+	{
+		methodOL s = new methodOL();
+		System.out.println(s.sum(10,20));
+		System.out.println(s.sum(10, 20,30));
+		System.out.println(s.sum(10.5,  20.5));
+		System.out.println(s.subt(25, 19.5));
+		System.out.println(s.multiply(25, 10.5));
+		System.out.println(s.divide(25, 5.25));
+	}
+}

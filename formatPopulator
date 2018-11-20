@@ -1,0 +1,64 @@
+//http://toolsqa.com/automation-practice-form/
+/* this code can be created by opening a new project in Eclipse, creating a Maven Project "File > New > Proj > Maven Project"
+In New Maven Project, create Simple Project(Check the Checkbox); 
+give GroupId, ArtifactId; both with projectName for identification (identifiers can be changed later on if reqd) & in the next screen;  
+Go to POM file in Exclipse and select Dependencies tab in the lower right pane to add the following: 
+(a) Selenium - Group Id: org.seleniumhq.selenium; Artifact Id: selenium-java;  Version: Latest Selenium version as per choise
+(b) JUnit - Group Id: Junit; Artifact Id: Junit; versin: 4.8.1 (Example)
+Byt the above the Exclipse Project's build path with be updated with Selenium and JUnit jar files under "Libraries"
+*/
+package formatPopulator;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FirstTest 
+{
+	public static void main(String[] args)
+	{
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://toolsqa.com/automation-practice-form/");
+		
+		WebElement element = driver.findElement(By.name("firstname"));
+		element.sendKeys("Srinivas");
+		
+		element = driver.findElement(By.name("lastname"));
+		element.sendKeys("Venugopal");
+		
+		WebElement radioBtn = driver.findElement(By.id("sex-0"));
+		//WebElement radioBtn = driver.findElement(By.id("sex-1"));
+		radioBtn.click();
+		
+		WebElement radioBtn1 = driver.findElement(By.id("exp-6"));
+		radioBtn1.click();
+		
+		WebElement dateTextBox = driver.findElement(By.id("datepicker"));
+		
+		Calendar calendar = Calendar.getInstance();
+		Date today = calendar.getTime();
+		
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		Date tomorrow = calendar.getTime();
+		
+		//dateTextBox.sendKeys(tomorrow);
+		DateFormat datepicker = new SimpleDateFormat("dd-MMM-yyyy");
+
+		//String todayAsString = dateFormat.format(today);
+		//String tomorrowAsString = dateFormat.format(tomorrow);
+
+		//System.out.println(todayAsString);
+		//System.out.println(tomorrowAsString);
+		//String todayAsString = dateFormat.format(today);
+		//dateTextBox.sendKeys(tomorrow);
+		
+		
+		
+	}
+}
